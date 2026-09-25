@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: myapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql
+
+  web:
+    build: ./app
+    ports:
+      - "5050:5000"
+    depends_on:
+      - db
+    environment:
+      - FLASK_ENV=development
+
+volumes:
+  pg_data:
