@@ -11,4 +11,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Say hello
-        run: echo "CI работает! Мой код в безопасности."
+        run: echo "CI работает!."
