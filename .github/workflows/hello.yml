@@ -10,14 +10,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Say hello
-        run: echo "CI работает!."
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-        python-version: '3.11'
-      - name: Install dependencies 
-        run: pip install -r app/requirements.txt 
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r app/requirements.txt
       - name: Check Python syntax
         run: python -m py_compile app/app.py
       - name: Say hello
